@@ -135,9 +135,9 @@
          (if (system call-string) ;; here we set the port
              (begin
 	      (sleep 1)
-				(set! out (open-output-file port-name #:mode 'binary #:exists 'append))
-				(set! in  (open-input-file  port-name #:mode 'binary))
-				(file-stream-buffer-mode out 'none)
+              (set! out (open-output-file port-name #:mode 'binary #:exists 'append))
+              (set! in  (open-input-file  port-name #:mode 'binary))
+              (file-stream-buffer-mode out 'none)
 	      (set! read-thread (thread (lambda ()  (read-hook)))) ;; we set the reading thread
 	      (printf "Success opening the serial port\n")
 	      #t)
